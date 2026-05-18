@@ -37,10 +37,15 @@ elementsGame/
     api/          — Express backend, Prisma schema, seed scripts
     game/         — React game client
     admin/        — React admin panel (internal tool)
-  GAME_DESIGN.md  — Rules, mechanics, open questions
-  CARD_CATEGORIES.md — All 10 element families, traits, notable cards
-  ADMIN_SPEC.md   — Admin panel DB schema, API endpoints, UI spec
-  ROADMAP.md      — Phased build plan with checkboxes
+  docs/GAME_DESIGN.md        — Rules, mechanics, open questions
+  docs/CARD_CATEGORIES.md   — Element classes and families
+  docs/ADMIN_SPEC.md        — Admin panel DB schema, API endpoints, UI spec
+  docs/ROADMAP.md           — Phased build plan with checkboxes
+  docs/NOTABLE_PEOPLE.md    — 15 scientists connected to the elements
+  docs/FUTURE_IDEAS.md      — Loose brainstorm, not planned
+  docs/MOLECULES.md         — 50 most significant molecules
+  docs/MOLECULAR_STRUCTURE.md — Isomers, chirality, polymers, ring structures
+  docs/BRANCHES_OF_CHEMISTRY.md — Core and specialized chemistry branches
 ```
 
 ## Running the Dev Servers
