@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Element {
+  id              Int      @id
+  name            String
+  symbol          String
+  atomicNumber    Int      @unique
+  atomicMass      Float?
+  category        String
+  period          Int?
+  groupNumber     Int?
+  stateAtRoomTemp String?
+  isRadioactive   Boolean  @default(false)
+  isSynthetic     Boolean  @default(false)
+
+  electronCost    Int?
+  attack          Int?
+  healthPoints    Int?
+  rarity          String   @default("common")
+  decayCounter    Int?
+  decayProductId  Int?
+
+  characterName       String?
+  loreDescription     String?
+  funFact             String?
+  abilityName         String?
+  abilityDescription  String?
+  abilityType         String?
+  abilityNotes        String?
+
+  artworkUrl      String?
+  artworkStatus   String   @default("needed")
+
+  cardStatus      String   @default("draft")
+  designNotes     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
