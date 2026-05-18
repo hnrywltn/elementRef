@@ -1,17 +1,28 @@
 import type { Element } from '../types'
 
-const CATEGORY_STYLES: Record<string, string> = {
-  alkali_metal:      'bg-red-100 text-red-700',
-  alkaline_earth:    'bg-orange-100 text-orange-700',
-  transition_metal:  'bg-blue-100 text-blue-700',
-  post_transition:   'bg-slate-100 text-slate-600',
-  metalloid:         'bg-yellow-100 text-yellow-700',
-  nonmetal:          'bg-green-100 text-green-700',
-  halogen:           'bg-purple-100 text-purple-700',
-  noble_gas:         'bg-cyan-100 text-cyan-700',
-  lanthanide:        'bg-pink-100 text-pink-700',
-  actinide:          'bg-rose-100 text-rose-700',
-  synthetic:         'bg-gray-100 text-gray-500',
+const CLASS_STYLES: Record<string, string> = {
+  forge:    'bg-amber-100 text-amber-800',
+  circuit:  'bg-teal-100 text-teal-800',
+  nucleus:  'bg-red-100 text-red-800',
+  bloom:    'bg-green-100 text-green-800',
+  aether:   'bg-sky-100 text-sky-800',
+  venom:    'bg-purple-100 text-purple-800',
+  catalyst: 'bg-yellow-100 text-yellow-800',
+  void:     'bg-gray-200 text-gray-600',
+}
+
+const FAMILY_STYLES: Record<string, string> = {
+  alkali_metal:      'bg-red-50 text-red-600',
+  alkaline_earth:    'bg-orange-50 text-orange-600',
+  transition_metal:  'bg-blue-50 text-blue-600',
+  post_transition:   'bg-slate-100 text-slate-500',
+  metalloid:         'bg-yellow-50 text-yellow-600',
+  nonmetal:          'bg-green-50 text-green-600',
+  halogen:           'bg-purple-50 text-purple-600',
+  noble_gas:         'bg-cyan-50 text-cyan-600',
+  lanthanide:        'bg-pink-50 text-pink-600',
+  actinide:          'bg-rose-50 text-rose-600',
+  synthetic:         'bg-gray-100 text-gray-400',
 }
 
 const STATUS_STYLES: Record<string, string> = {
@@ -40,7 +51,7 @@ export default function ElementsTable({ elements, selectedId, onSelect }: Props)
     <table className="w-full text-sm border-collapse">
       <thead className="sticky top-0 bg-white border-b-2 border-gray-200 z-10">
         <tr>
-          {['#', 'Symbol', 'Name', 'Family', 'Class', 'Cost', 'ATK', 'HP', 'Rarity', 'Status', 'Art'].map(h => (
+          {['#', 'Symbol', 'Name', 'Class', 'Family', 'Cost', 'ATK', 'HP', 'Rarity', 'Status', 'Art'].map(h => (
             <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
               {h}
             </th>
@@ -63,12 +74,18 @@ export default function ElementsTable({ elements, selectedId, onSelect }: Props)
               {el.isRadioactive && <span className="ml-1 text-orange-400 text-xs">☢</span>}
             </td>
             <td className="px-3 py-1.5">
-              <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${CATEGORY_STYLES[el.category] ?? 'bg-gray-100 text-gray-500'}`}>
+              {el.cardClass ? (
+                <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold capitalize ${CLASS_STYLES[el.cardClass] ?? 'bg-gray-100 text-gray-500'}`}>
+                  {el.cardClass}
+                </span>
+              ) : (
+                <span className="text-gray-200 text-xs">—</span>
+              )}
+            </td>
+            <td className="px-3 py-1.5">
+              <span className={`inline-block px-2 py-0.5 rounded-full text-xs ${FAMILY_STYLES[el.category] ?? 'bg-gray-100 text-gray-400'}`}>
                 {el.category.replace(/_/g, ' ')}
               </span>
-            </td>
-            <td className="px-3 py-1.5 text-xs text-gray-500 capitalize w-20">
-              {el.cardClass ?? <span className="text-gray-200">—</span>}
             </td>
             <td className="px-3 py-1.5 text-center text-gray-600 w-12">{el.electronCost ?? <span className="text-gray-200">—</span>}</td>
             <td className="px-3 py-1.5 text-center text-red-400 font-medium w-12">{el.attack ?? <span className="text-gray-200">—</span>}</td>

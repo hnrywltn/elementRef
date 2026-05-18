@@ -1,11 +1,13 @@
-const CATEGORIES = [
+const FAMILIES = [
   'alkali_metal', 'alkaline_earth', 'transition_metal', 'post_transition',
   'metalloid', 'nonmetal', 'halogen', 'noble_gas', 'lanthanide', 'actinide', 'synthetic',
 ]
+const CLASSES = ['aether', 'bloom', 'catalyst', 'circuit', 'forge', 'nucleus', 'venom', 'void']
 const STATUSES = ['draft', 'in_review', 'complete', 'balanced']
 
 export interface Filters {
-  category: string
+  cardClass: string
+  family: string
   status: string
   search: string
 }
@@ -25,16 +27,26 @@ export default function FilterBar({ filters, onChange, total, filtered }: Props)
         placeholder="Search name or symbol..."
         value={filters.search}
         onChange={e => onChange({ ...filters, search: e.target.value })}
-        className="border border-gray-200 rounded px-3 py-1.5 text-sm w-52 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="border border-gray-200 rounded px-3 py-1.5 text-sm w-48 focus:outline-none focus:ring-2 focus:ring-blue-300"
       />
       <select
-        value={filters.category}
-        onChange={e => onChange({ ...filters, category: e.target.value })}
+        value={filters.cardClass}
+        onChange={e => onChange({ ...filters, cardClass: e.target.value })}
         className="border border-gray-200 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
       >
-        <option value="">All categories</option>
-        {CATEGORIES.map(c => (
-          <option key={c} value={c}>{c.replace(/_/g, ' ')}</option>
+        <option value="">All classes</option>
+        {CLASSES.map(c => (
+          <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>
+        ))}
+      </select>
+      <select
+        value={filters.family}
+        onChange={e => onChange({ ...filters, family: e.target.value })}
+        className="border border-gray-200 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        <option value="">All families</option>
+        {FAMILIES.map(f => (
+          <option key={f} value={f}>{f.replace(/_/g, ' ')}</option>
         ))}
       </select>
       <select

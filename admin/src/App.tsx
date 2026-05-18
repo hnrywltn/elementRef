@@ -9,7 +9,7 @@ import FilterBar from './components/FilterBar'
 export default function App() {
   const [elements, setElements] = useState<Element[]>([])
   const [selected, setSelected] = useState<Element | null>(null)
-  const [filters, setFilters] = useState<Filters>({ category: '', status: '', search: '' })
+  const [filters, setFilters] = useState<Filters>({ cardClass: '', family: '', status: '', search: '' })
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -26,7 +26,8 @@ export default function App() {
   }
 
   const filtered = elements.filter(el => {
-    if (filters.category && el.category !== filters.category) return false
+    if (filters.cardClass && el.cardClass !== filters.cardClass) return false
+    if (filters.family && el.category !== filters.family) return false
     if (filters.status && el.cardStatus !== filters.status) return false
     if (filters.search) {
       const q = filters.search.toLowerCase()

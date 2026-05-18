@@ -79,22 +79,31 @@ A small pool of **Neutral** cards (likely noble gases and a few others) can go i
 
 ---
 
-### Class Balance Check
+### Class Balance (Current DB State)
 
-| Class | Draft Count | Target |
+| Class | Count | Elements |
 |---|---|---|
-| Forge | 14 | 12–15 |
-| Circuit | 14 | 12–15 |
-| Nucleus | 15 | 12–15 |
-| Bloom | 16 | 12–16 |
-| Aether | 12 | 10–14 |
-| Venom | 14 | 12–15 |
-| Catalyst | 14 | 12–15 |
-| Void | 15 | 13–15 |
-| **Total assigned** | **114** | |
-| Unassigned / Neutral | ~4 | |
+| Forge | 15 | Fe, Ti, Al, Cr, Mn, W, Mo, Ni, V, Nb, Ta, Zr, Hf, Re, Sn |
+| Circuit | 13 | Cu, Ag, Si, Ge, Ga, In, Se, Te, Nd, Sm, Gd, Dy, Er |
+| Nucleus | 21 | All radioactive: U, Pu, Ra, Th, Fr, Rn, Po, Am, Cm, Ac, Pa, Np, Pm, Tc, Bk, Cf, Es, Fm, Md, No, Lr |
+| Bloom | 15 | H, B, C, N, O, Na, Mg, P, S, K, Ca, Co, Zn, Sr, I |
+| Aether | 12 | He, Ne, Ar, Kr, Ru, Rh, Pd, Xe, Os, Ir, Pt, Au |
+| Venom | 14 | Be, F, Cl, As, Br, Cd, Sb, Cs, Ba, Hg, Tl, Pb, Bi, At |
+| Catalyst | 13 | Li, Sc, Rb, Y, La, Ce, Pr, Eu, Tb, Ho, Tm, Yb, Lu |
+| Void | 15 | Rf–Og (all 15 synthetic elements, 104–118) |
+| **Total** | **118** | |
 
-> Some elements appear in multiple categories above (Se, Co, Zr). Final assignment TBD with family input. The goal is thematic fit, not strict chemistry.
+**Conflict resolutions (vs. initial draft):**
+- Se → Circuit (semiconductor over biological)
+- Co → Bloom (Vitamin B12, biological trace element)
+- Mo → Forge (molybdenum steel alloy)
+- Mg → Bloom (chlorophyll)
+- Mn → Forge (steel alloy)
+- Zr → Forge (aerospace)
+- Rn → Nucleus (radioactive trumps noble gas)
+- Au → Aether (precious, relatively inert, noble metal)
+
+> Nucleus is intentionally larger (21) because every radioactive element belongs there thematically. Adjust in the admin panel as needed.
 
 ---
 
