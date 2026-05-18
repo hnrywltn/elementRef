@@ -8,6 +8,8 @@
 
 **Dark Matter** — the unknown stuff making up 27% of the universe that doesn't interact with light; could inspire a hidden/invisible card mechanic or an entire mystery class.
 
+**Chemical Space** — the theoretical set of all possible molecules that could ever exist. Estimated at 10⁶⁰ drug-like molecules alone — more than atoms in the observable universe. We've documented around 200 million. The vast unexplored remainder is called chemical space, and it's one of the most mind-bending concepts in science: an almost infinite landscape of substances, most of which have never existed and never will unless someone deliberately makes them. For the game, chemical space could represent the unknown — a mechanic built around discovery, randomness, and the frontier of what hasn't been found yet. A "chemical space" card could generate a random molecule with unpredictable properties, or an entire late-game expansion could be built around exploring it. The contrast between the 118 known elements (fixed, finite, fully mapped) and the near-infinite molecules they can form is one of the most interesting tensions in the whole project.
+
 **Particle Accelerator** — machines that smash atoms together to create new elements; could be a game board location, a special card that combines two element cards into a new one, or the origin story for Void class cards.
 
 **The Periodic Table (as a game board)** — the actual table layout used as a visual map or progression system, where unlocking elements moves you across the grid.
