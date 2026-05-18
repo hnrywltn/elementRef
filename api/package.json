@@ -6,6 +6,7 @@
     "seed": "ts-node prisma/seed.ts",
     "assign-classes": "ts-node prisma/assign-classes.ts",
     "populate-facts": "ts-node prisma/populate-facts.ts",
+    "seed-people": "ts-node prisma/seed-people.ts",
     "setup": "prisma db push && ts-node prisma/seed.ts && ts-node prisma/assign-classes.ts"
   },
   "prisma": {

@@ -38,3 +38,24 @@ export interface Element {
   createdAt: string
   updatedAt: string
 }
+
+export interface Person {
+  id: number
+  name: string
+  born: number | null
+  died: number | null
+  nationality: string | null
+
+  biography: string | null
+  contribution: string | null
+  gameAngle: string | null
+  funFact: string | null
+  relatedElements: string | null
+
+  artworkUrl: string | null
+  artworkStatus: string
+  cardStatus: string
+  designNotes: string | null
+  createdAt: string
+  updatedAt: string
+}

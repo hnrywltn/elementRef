@@ -48,3 +48,24 @@ model Element {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
+
+model Person {
+  id              Int      @id @default(autoincrement())
+  name            String
+  born            Int?
+  died            Int?
+  nationality     String?
+
+  biography       String?
+  contribution    String?
+  gameAngle       String?
+  funFact         String?
+  relatedElements String?
+
+  artworkUrl      String?
+  artworkStatus   String   @default("needed")
+  cardStatus      String   @default("draft")
+  designNotes     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
