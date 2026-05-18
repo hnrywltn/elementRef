@@ -48,7 +48,8 @@ model Element {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  personRelations PersonElement[]
+  personRelations      PersonElement[]
+  characterReferences  CharacterReference[]
 }
 
 model Person {
@@ -72,6 +73,19 @@ model Person {
   updatedAt       DateTime @updatedAt
 
   elementRelations PersonElement[]
+}
+
+model CharacterReference {
+  id            Int      @id @default(autoincrement())
+  element       Element  @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  elementId     Int
+  characterName String
+  showOrMovie   String?
+  actorName     String?
+  notes         String?
+  addedBy       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 // relation types: discovered | co_discovered | isolated | named | named_after | synthesized

@@ -39,6 +39,27 @@ export interface Element {
   updatedAt: string
 }
 
+export interface CharacterReference {
+  id: number
+  elementId: number
+  characterName: string
+  showOrMovie: string | null
+  actorName: string | null
+  notes: string | null
+  addedBy: string | null
+  createdAt: string
+  updatedAt: string
+}
+
+export interface ElementWithRefs {
+  id: number
+  name: string
+  symbol: string
+  category: string
+  cardClass: string | null
+  characterReferences: CharacterReference[]
+}
+
 export interface ElementRef {
   id: number
   name: string

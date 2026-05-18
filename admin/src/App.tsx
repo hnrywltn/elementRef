@@ -7,8 +7,9 @@ import ElementDetail from './components/ElementDetail'
 import FilterBar from './components/FilterBar'
 import PeopleTable from './components/PeopleTable'
 import PersonDetail from './components/PersonDetail'
+import CharactersPage from './pages/CharactersPage'
 
-type Page = 'elements' | 'people'
+type Page = 'elements' | 'people' | 'characters'
 
 export default function App() {
   const [page, setPage] = useState<Page>('elements')
@@ -55,7 +56,7 @@ export default function App() {
         <div className="flex items-center pr-6 border-r border-gray-200 mr-2">
           <h1 className="text-base font-bold tracking-tight">Elements Admin</h1>
         </div>
-        {(['elements', 'people'] as Page[]).map(p => (
+        {(['elements', 'people', 'characters'] as Page[]).map(p => (
           <button
             key={p}
             onClick={() => setPage(p)}
@@ -89,6 +90,8 @@ export default function App() {
           </div>
         </>
       )}
+
+      {page === 'characters' && <CharactersPage />}
 
       {page === 'people' && (
         <div className="flex flex-1 overflow-hidden">
