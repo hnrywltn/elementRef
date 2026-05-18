@@ -43,6 +43,15 @@ elementsGame/
   ROADMAP.md      — Phased build plan with checkboxes
 ```
 
+## Running the Dev Servers
+
+```bash
+cd api && npm run dev    # port 3001 — restart this after any schema change
+cd admin && npm run dev  # port 5173
+```
+
+After adding a field to `api/prisma/schema.prisma`, run `npx prisma db push` then **restart the API server** — the running process holds the old generated Prisma client in memory and won't see new fields until restarted.
+
 ## Build Order
 
 Always start with Phase 0 (admin panel + data layer) before touching the game engine. The admin panel is how all 118 cards get authored. The game engine reads from the same database. Do not hardcode card data.
