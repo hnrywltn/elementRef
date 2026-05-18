@@ -2,6 +2,16 @@ import { useState, useEffect } from 'react'
 import { updatePerson } from '../api/client'
 import type { Person } from '../types'
 
+const RELATION_STYLES: Record<string, string> = {
+  discovered:    'bg-green-100 text-green-700',
+  co_discovered: 'bg-teal-100 text-teal-700',
+  isolated:      'bg-blue-100 text-blue-700',
+  named:         'bg-purple-100 text-purple-700',
+  named_after:   'bg-amber-100 text-amber-700',
+  synthesized:   'bg-rose-100 text-rose-700',
+  related:       'bg-gray-100 text-gray-500',
+}
+
 interface Props {
   person: Person
   onSave: (p: Person) => void
@@ -65,6 +75,25 @@ export default function PersonDetail({ person, onSave, onClose }: Props) {
             <TextField label="Related elements" value={draft.relatedElements} onChange={v => set('relatedElements', v)} />
           </div>
         </section>
+
+        {person.elementRelations.length > 0 && (
+          <section>
+            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+              Linked Elements ({person.elementRelations.length})
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {person.elementRelations.map(r => (
+                <div key={r.elementId} className="flex items-center gap-1 bg-gray-50 border border-gray-200 rounded px-2 py-1">
+                  <span className="font-bold font-mono text-gray-800 text-xs">{r.element.symbol}</span>
+                  <span className="text-gray-400 text-xs">{r.element.name}</span>
+                  <span className={`text-xs px-1.5 py-0.5 rounded-full ml-1 ${RELATION_STYLES[r.relation] ?? 'bg-gray-100 text-gray-500'}`}>
+                    {r.relation.replace(/_/g, ' ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section>
           <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Game Design</h3>

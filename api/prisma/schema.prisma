@@ -47,6 +47,8 @@ model Element {
   designNotes     String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+
+  personRelations PersonElement[]
 }
 
 model Person {
@@ -68,4 +70,18 @@ model Person {
   designNotes     String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+
+  elementRelations PersonElement[]
+}
+
+// relation types: discovered | co_discovered | isolated | named | named_after | synthesized
+model PersonElement {
+  id        Int     @id @default(autoincrement())
+  person    Person  @relation(fields: [personId], references: [id], onDelete: Cascade)
+  personId  Int
+  element   Element @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  elementId Int
+  relation  String  @default("related")
+
+  @@unique([personId, elementId])
 }

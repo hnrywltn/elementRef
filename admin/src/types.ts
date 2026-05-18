@@ -39,6 +39,22 @@ export interface Element {
   updatedAt: string
 }
 
+export interface ElementRef {
+  id: number
+  name: string
+  symbol: string
+  category: string
+  cardClass: string | null
+}
+
+export interface PersonElement {
+  id: number
+  personId: number
+  elementId: number
+  relation: string
+  element: ElementRef
+}
+
 export interface Person {
   id: number
   name: string
@@ -58,4 +74,6 @@ export interface Person {
   designNotes: string | null
   createdAt: string
   updatedAt: string
+
+  elementRelations: PersonElement[]
 }
