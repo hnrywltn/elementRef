@@ -11,6 +11,7 @@ export interface Element {
   isRadioactive: boolean
   isSynthetic: boolean
 
+  cardClass: string | null
   electronCost: number | null
   attack: number | null
   healthPoints: number | null

@@ -48,6 +48,22 @@ Unspent electrons do **not** carry over (keeps turns snappy, like Hearthstone).
 
 ---
 
+## Two-Layer Identity System
+
+Every element card has two distinct identities that work together:
+
+### Class (deck archetype / thematic identity)
+There are 8 classes. Your deck is built around one class — only cards belonging to that class (plus a small number of neutral cards) can go in your deck. Classes are thematic, not strictly periodic table groups. An element's class is assigned based on its personality, real-world role, and how it fits the game's story — not purely its chemistry.
+
+**Class names and element assignments are a draft — to be finalized with family input.** See CARD_CATEGORIES.md.
+
+### Family (periodic table group / passive mechanical trait)
+Every card also belongs to a periodic table family (alkali metal, halogen, noble gas, etc.). This gives the card a passive mechanical trait shared by all family members. Family is determined purely by chemistry and never changes.
+
+**The distinction:** Class controls deck building. Family controls the passive mechanic. A card can be a *Halogen by family* (corrosive passive) while belonging to the *Venom class* (deck archetype). Both layers are always active.
+
+---
+
 ## Card Types
 
 ### Element Cards (Minions)
@@ -57,7 +73,8 @@ The primary card type. Each element is a character that lives on the board, can 
 - `Name` — element name + atomic symbol
 - `Atomic Number` — determines cost (electrons) and base power tier
 - `Attack` / `Health` — combat stats
-- `Category` — element family (see below)
+- `Class` — deck archetype this card belongs to (see Class System above)
+- `Family` — periodic table group, determines passive trait
 - `Ability` — unique power, inspired by the element's real-world properties
 - `Flavor text` — short lore blurb giving the element its character/story
 
@@ -70,9 +87,9 @@ Stay in play and modify rules. Represent catalysts that change the conditions of
 
 ---
 
-## Element Categories & Shared Traits
+## Element Families & Shared Traits
 
-Each element's family gives it a passive trait that all members share. Synergies between same-family cards can be built into deck strategy.
+Each element's **family** (periodic table group) gives it a passive trait that all members share. These are chemistry-based and fixed — they don't change with class reassignments.
 
 | Category | Real Elements | Shared Trait (Draft) |
 |---|---|---|

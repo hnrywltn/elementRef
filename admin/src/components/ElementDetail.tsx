@@ -54,6 +54,12 @@ export default function ElementDetail({ element, onSave, onClose }: Props) {
 
         <Section title="Game Stats">
           <div className="grid grid-cols-2 gap-2">
+            <SelectField
+              label="Class"
+              value={draft.cardClass ?? ''}
+              options={['','forge','circuit','nucleus','bloom','aether','venom','catalyst','void']}
+              onChange={v => set('cardClass', v || null)}
+            />
             <NumField label="Electron Cost" value={draft.electronCost} onChange={v => set('electronCost', v)} />
             <NumField label="Attack" value={draft.attack} onChange={v => set('attack', v)} />
             <NumField label="HP" value={draft.healthPoints} onChange={v => set('healthPoints', v)} />

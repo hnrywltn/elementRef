@@ -20,6 +20,7 @@ model Element {
   isRadioactive   Boolean  @default(false)
   isSynthetic     Boolean  @default(false)
 
+  cardClass       String?
   electronCost    Int?
   attack          Int?
   healthPoints    Int?

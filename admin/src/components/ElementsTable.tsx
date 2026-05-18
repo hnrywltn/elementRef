@@ -40,7 +40,7 @@ export default function ElementsTable({ elements, selectedId, onSelect }: Props)
     <table className="w-full text-sm border-collapse">
       <thead className="sticky top-0 bg-white border-b-2 border-gray-200 z-10">
         <tr>
-          {['#', 'Symbol', 'Name', 'Category', 'Cost', 'ATK', 'HP', 'Rarity', 'Status', 'Art'].map(h => (
+          {['#', 'Symbol', 'Name', 'Family', 'Class', 'Cost', 'ATK', 'HP', 'Rarity', 'Status', 'Art'].map(h => (
             <th key={h} className="px-3 py-2 text-left text-xs font-semibold text-gray-400 uppercase tracking-wide whitespace-nowrap">
               {h}
             </th>
@@ -66,6 +66,9 @@ export default function ElementsTable({ elements, selectedId, onSelect }: Props)
               <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${CATEGORY_STYLES[el.category] ?? 'bg-gray-100 text-gray-500'}`}>
                 {el.category.replace(/_/g, ' ')}
               </span>
+            </td>
+            <td className="px-3 py-1.5 text-xs text-gray-500 capitalize w-20">
+              {el.cardClass ?? <span className="text-gray-200">—</span>}
             </td>
             <td className="px-3 py-1.5 text-center text-gray-600 w-12">{el.electronCost ?? <span className="text-gray-200">—</span>}</td>
             <td className="px-3 py-1.5 text-center text-red-400 font-medium w-12">{el.attack ?? <span className="text-gray-200">—</span>}</td>
