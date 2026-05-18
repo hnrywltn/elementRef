@@ -52,6 +52,13 @@ export default function ElementDetail({ element, onSave, onClose }: Props) {
       {/* Scrollable fields */}
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-5">
 
+        <Section title="Real World">
+          <TextareaField label="What it is" value={draft.elementDescription} onChange={v => set('elementDescription', v)} rows={3} />
+          <TextareaField label="Where found" value={draft.whereFound} onChange={v => set('whereFound', v)} rows={2} />
+          <TextareaField label="Used for" value={draft.usedFor} onChange={v => set('usedFor', v)} rows={2} />
+          <TextareaField label="Fun fact" value={draft.funFact} onChange={v => set('funFact', v)} rows={2} />
+        </Section>
+
         <Section title="Game Stats">
           <div className="grid grid-cols-2 gap-2">
             <SelectField
@@ -167,14 +174,14 @@ function NumField({ label, value, onChange }: { label: string; value: number | n
   )
 }
 
-function TextareaField({ label, value, onChange }: { label: string; value: string | null | undefined; onChange: (v: string | null) => void }) {
+function TextareaField({ label, value, onChange, rows = 3 }: { label: string; value: string | null | undefined; onChange: (v: string | null) => void; rows?: number }) {
   return (
     <div>
       {label && <label className="block text-xs text-gray-400 mb-0.5">{label}</label>}
       <textarea
         value={value ?? ''}
         onChange={e => onChange(e.target.value || null)}
-        rows={3}
+        rows={rows}
         className="w-full border border-gray-200 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 resize-none"
       />
     </div>

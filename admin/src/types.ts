@@ -19,9 +19,13 @@ export interface Element {
   decayCounter: number | null
   decayProductId: number | null
 
+  elementDescription: string | null
+  whereFound: string | null
+  usedFor: string | null
+  funFact: string | null
+
   characterName: string | null
   loreDescription: string | null
-  funFact: string | null
   abilityName: string | null
   abilityDescription: string | null
   abilityType: string | null

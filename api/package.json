@@ -5,6 +5,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "seed": "ts-node prisma/seed.ts",
     "assign-classes": "ts-node prisma/assign-classes.ts",
+    "populate-facts": "ts-node prisma/populate-facts.ts",
     "setup": "prisma db push && ts-node prisma/seed.ts && ts-node prisma/assign-classes.ts"
   },
   "prisma": {

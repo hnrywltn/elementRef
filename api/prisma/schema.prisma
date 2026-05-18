@@ -28,9 +28,13 @@ model Element {
   decayCounter    Int?
   decayProductId  Int?
 
+  elementDescription  String?
+  whereFound          String?
+  usedFor             String?
+  funFact             String?
+
   characterName       String?
   loreDescription     String?
-  funFact             String?
   abilityName         String?
   abilityDescription  String?
   abilityType         String?
