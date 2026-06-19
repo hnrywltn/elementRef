@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "npx prisma generate && tsc",
+    "start": "node dist/src/index.js",
     "seed": "ts-node prisma/seed.ts",
     "assign-classes": "ts-node prisma/assign-classes.ts",
     "populate-facts": "ts-node prisma/populate-facts.ts",

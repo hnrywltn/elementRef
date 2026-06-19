@@ -1,7 +1,7 @@
 import type { Element, Person, ElementWithRefs, CharacterReference } from '../types'
 
 export async function fetchElements(): Promise<Element[]> {
-  const res = await fetch('/api/elements')
+  const res = await fetch(`/api/elements`)
   if (!res.ok) throw new Error('Failed to fetch elements')
   return res.json()
 }
@@ -17,7 +17,7 @@ export async function updateElement(id: number, data: Partial<Element>): Promise
 }
 
 export async function fetchPeople(): Promise<Person[]> {
-  const res = await fetch('/api/people')
+  const res = await fetch(`/api/people`)
   if (!res.ok) throw new Error('Failed to fetch people')
   return res.json()
 }
@@ -33,7 +33,7 @@ export async function updatePerson(id: number, data: Partial<Person>): Promise<P
 }
 
 export async function fetchCharacterElements(): Promise<ElementWithRefs[]> {
-  const res = await fetch('/api/characters')
+  const res = await fetch(`/api/characters`)
   if (!res.ok) throw new Error('Failed to fetch character data')
   return res.json()
 }
