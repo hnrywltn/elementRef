@@ -14,7 +14,7 @@ app.use('/api/elements', elementsRouter)
 app.use('/api/people', peopleRouter)
 app.use('/api/characters', charactersRouter)
 
-const adminBuildPath = path.join(__dirname, '../../admin/dist')
+const adminBuildPath = path.join(__dirname, '../../../admin/dist')
 app.use(express.static(adminBuildPath))
 app.get('*', (_req, res) => {
   res.sendFile(path.join(adminBuildPath, 'index.html'))
