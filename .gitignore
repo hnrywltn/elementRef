@@ -1,7 +1,23 @@
 node_modules/
-api/node_modules/
+
+# API
 api/dist/
+api/prisma/*.db
+api/prisma/*.db-journal
 api/dev.db
 api/dev.db-journal
-admin/node_modules/
+
+# Admin
 admin/dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
